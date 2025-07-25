@@ -6,7 +6,8 @@ import random
 
 class ReplayBuffer:
     def __init__(self, capacity):
-        self.buffer = collections.deque(maxlen=capacity) 
+        self.buffer = collections.deque(maxlen=capacity)
+        random.seed(0)
 
     def add(self, state, action, reward, next_state, done): 
         self.buffer.append((state, action, reward, next_state, done)) 
